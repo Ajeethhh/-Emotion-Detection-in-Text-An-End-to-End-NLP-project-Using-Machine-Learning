@@ -1,32 +1,45 @@
 # -Emotion-Detection-in-Text-An-End-to-End-NLP-project-Using-Machine-Learning
-Emotion Detection in Text: An End-to-End NLP Pipeline Using Logistic Regression
+## Project Overview
+This project implements an end-to-end Natural Language Processing (NLP) pipeline to detect emotions in text. By leveraging machine learning models like Logistic Regression and Naïve Bayes, the system classifies text into categories such as joy, sadness, anger, fear, and more. The pipeline is designed for robustness, efficiency, and future deployment.
 
-Objective: The primary goal of this project is to develop a robust and efficient pipeline for detecting emotions in text using Natural Language Processing (NLP) techniques and machine learning. By leveraging logistic regression, naive bayes the project aims to classify text into various emotional categories such as joy, sadness, anger, fear, and others.
+## Dataset
+The dataset contains text samples labeled with corresponding emotions. Data exploration and visualization were performed to understand the distribution of emotions and prepare the data for modeling.
 
-Dataset: The project utilizes a dataset containing text samples labeled with corresponding emotions. The dataset is loaded and inspected to understand the distribution of emotions and prepare for subsequent processing.
+## Methodology
 
-Methodology:
+### Data Exploration & Visualization
+- Analyzed the distribution of emotions using pandas and visualized with seaborn.
+- Gained insights into class balance and text characteristics.
 
-Data Exploration and Visualization:
+### Data Cleaning
+- Cleaned text using the `neattext` library by removing user handles, stopwords, and irrelevant characters.
+- Created a `Clean_Text` column to store the processed text.
 
-Load the dataset using pandas and explore the distribution of emotions using value counts. Visualize the data distribution using seaborn to understand the frequency of each emotion category.
+### Feature Engineering
+- Defined features (cleaned text) and labels (emotions).
+- Split data into training and test sets using `train_test_split` from scikit-learn.
 
-Data Cleaning:
+### Model Building
+- Built an ML pipeline using scikit-learn’s `Pipeline`.
+- Integrated `CountVectorizer` for text vectorization.
+- Trained Logistic Regression and Naïve Bayes classifiers on the training set.
 
-Employ the neattext library to clean the text data by removing user handles, stopwords, and other irrelevant components. Create a new column Clean_Text in the dataframe to store the cleaned text.
+### Model Evaluation
+- Evaluated model performance using accuracy score and classification report.
+- Assessed predictions and probabilities for individual text samples.
 
-Feature Engineering:
+### Model Saving
+- Saved the trained pipeline using `joblib` for future use and deployment.
 
-Define features (cleaned text) and labels (emotions) for the model. Split the data into training and test sets using train_test_split from sklearn.
+## Key Skills & Tools
+- **Natural Language Processing (NLP)** – Text cleaning, tokenization, vectorization  
+- **Machine Learning** – Logistic Regression, Naïve Bayes, classification  
+- **Python** – pandas, scikit-learn, seaborn, matplotlib  
+- **Data Preprocessing & Cleaning** – neattext  
+- **Model Pipeline Development** – sklearn Pipeline  
+- **Model Evaluation** – Accuracy, classification report  
+- **Deployment Prep** – joblib for saving models  
 
-Model Building:
-
-Construct a machine learning pipeline using sklearn's Pipeline. Integrate CountVectorizer for text vectorization and LogisticRegression for classification. Train the logistic regression model on the training data.
-
-Model Evaluation:
-
-Evaluate the model’s performance on the test set using accuracy score and classification report. Assess model predictions and prediction probabilities for individual text samples.
-
-Model Saving:
-
-Save the trained model pipeline using joblib for future use and deployment.
+## Business Impact
+- Enables automated detection of emotions in text for applications in customer feedback analysis, social media monitoring, and sentiment tracking.  
+- Supports data-driven decision-making by providing insights into emotional trends in textual data.
